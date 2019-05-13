@@ -1,0 +1,391 @@
+<!DOCTYPE html> 
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+        <!-- Titel der Seite -->
+        <title>Himalaya</title>
+
+        <!-- Bootstrap und weiteres CSS-->
+        <link href="css/bootstrap121.css" rel="stylesheet">
+        <link href="css/additions.css" rel="stylesheet">
+        <link href="css/fonts.css" rel="stylesheet">
+        <link href="css/animation.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- JavaScript fuer API-Zugriff mit Ajax -->
+        <script>
+            function performApiRequest(key, module, action, parameters, fnct) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = fnct;
+                xhttp.open("GET", "/scripts/ajax.php?key=" + encodeURIComponent(key) + "&mod=" + encodeURIComponent(module) + "&action=" + encodeURIComponent(action) + "&prm=" + encodeURIComponent(parameters), true);
+                xhttp.send();
+            }
+
+            function callFunct(functionName, parameters, fnct) {
+                var prm = "";
+                for (var i = 0; i < parameters.length; i++) {
+                    prm += parameters[i] + ";";
+                }
+                prm = prm.substr(0, prm.length - 1);
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = fnct;
+                xhttp.open("GET", "/scripts/ajax.php?fnc=" + encodeURIComponent(functionName) + "&prm=" + encodeURIComponent(prm), true);
+                xhttp.send();
+            }
+        </script>
+
+        <style>
+            .himalaya-bg{
+                background-image: url("./media/header.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+
+    </head>
+
+    <body class="">
+
+
+
+        <!-- Beginn der tatsaechlichen Internetseite -->
+        <div class="container-fluid w-100">
+            <div class="row himalaya-bg">
+                <div class="col-md-9 f-wind" style="color: white; font-size: 32pt">
+                    <img src="/media/himalaya.png" height="80px" style="margin: 5px; filter: brightness(1.6)"/>
+                </div>
+                <div class="col-md-3">
+                    <form class="form-inline" style="float: right; margin-top: 25px" action="?p=search" method="GET">
+                        <div class="form-group">
+                            <label class="sr-only" for="search_query">Suchbegriff</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="search_query" placeholder="Suchbegriff">
+                                <div class="input-group-addon" style=" vertical-align: central; background-color: #3333ff "><button type="submit" style="background: transparent; border: none"><span class="glyphicon glyphicon-search" style="color: #ffffff "aria-hidden="true"></span></button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="" style="background-color: black; width: 100%; height: 3px"></div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Navigation ein-/ausblenden</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <input class="btn btn-default bg-pink" style="font-size: 20pt; margin-top: 6px; color: #ffffff" type="button" value="Startseite">
+                </div>
+
+                <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown" style="margin-left: 25px">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" style="font-size: 20pt" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>Produkte <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">test 1</a></li>
+                                <li><a href="#">test 2</a></li>
+                                <li><a href="#">test 3</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Bestseller</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Hit der Woche</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" style="margin-left: 25px">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" style="font-size: 20pt" aria-expanded="false"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  Angebote <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Tiefpreisschlager</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 20pt" aria-hidden="true"></span></a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" style="font-size: 20pt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header" style="font-size: 12pt">Log in</li>
+                                <li><a><form class="form-inline">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="beispielFeldSumme">.</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="beispielFeldSumme" placeholder="Benutzername">
+                                                </div>
+                                            </div>
+                                        </form></a></li>
+
+                                <li><a><form class="form-inline">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="beispielFeldSumme">.</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" id="beispielFeldSumme" placeholder="Passwort">
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <center><button class="btn btn-default btn-sm" type="submit" style="margin-top: 3px">Anmelden</button></center>
+                                        </form></a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Passwort vergessen?</a></li>
+                                <li><a href="#">Registrieren</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" style="font-size: 20pt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hilfe <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Kontakt</a></li>
+                                <li><a href="#">Häufige Fragen</a></li>
+                                <li><a href="#">Automatische Reperatur</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Impressum</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container-fluid">
+
+
+            <div class="row">
+                <div class="col-md-3 w-90" style="font-size: 15pt">
+                    <div class="panel panel-default" style="margin-left: 30px; background-color: #ffffff" >
+                        <div class="panel-heading" style="font-size: 15pt; color: #ff00cc; font-style: initial">Filter</div>
+                        <div class="panel-body">
+                            Verfügbarkeit
+                            <br/>
+                            <div class="btn-group-vertical w-50" role="group" aria-label="">
+                                <button type="button" id="btn_filter_aufLager" class="btn btn-default">Auf Lager.</button>
+                                <button type="button" id="btn_filter_nichtVerfugbar" class="btn btn-default">Nicht Verfügabar.</button>
+
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            Preis
+                            <form class="form-inline w-50">
+                                <div class="form-group">
+                                    <label class="sr-only" for="txt_filter_von">.</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="txt_filter_von" placeholder="Von...">
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form-inline w-50">
+                                <div class="form-group">
+                                    <label class="sr-only" for="txt_filter_bis">.</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="txt_filter_bis" placeholder="Bis...">
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </div>
+                        <div class="panel-body">
+                            Farbe
+                            <br/>
+                            <div class="btn-group">
+                                <button type="button" style="background-color: blue; height: 30px; width: 30px" ></button>
+                                <button type="button" style="background-color: blueviolet; height: 30px; width: 30px"></button>
+                                <button type="button" style="background-color: #ff00cc; height: 30px; width: 30px"></button>
+                                <button type="button" style="background-color: red; height: 30px; width: 30px"></button>
+                                <button type="button" style="background-color: orange; height: 30px; width: 30px"></button>
+                                <button type="button" style="background-color: yellow; height: 30px; width: 30px"></button>
+                                <br/>
+                                <button type="button" style="background-color: yellowgreen; height: 30px; width: 30px"></button>
+                                <button type="button" style="background-color: green; height: 30px; width: 30px"></button>
+                                <button type="button" style="background-color: darkgreen; height: 30px; width: 30px"></button>
+                                <button type="button" style="background-color: black; height: 30px; width: 30px"></button>
+                                <button type="button" style="background-color: grey; height: 30px; width: 30px"></button>
+                                <button type="button" style="background-color: lightgrey; height: 30px; width: 30px"></button>
+
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            Kategorie
+                            <br/>
+                            <div class="btn-group-vertical w-50" role="group" aria-label="">
+                                <button type="button" id="btn_filter_kPflanzen" class="btn btn-default">Pflanzen</button>
+                                <button type="button" id="btn_filter_kGeback" class="btn btn-default">Gebäck</button>
+                                <button type="button" id="btn_filter_kBuch" class="btn btn-default">Buch</button>
+                                <button type="button" id="btn_filter_kGewurz" class="btn btn-default">Gewürz</button>
+                                <button type="button" id="btn_filter_kGarten" class="btn btn-default">Gartenutensilien</button>
+                                <button type="button" id="btn_filter_kKuche" class="btn btn-default">Küchengeräte</button>
+                                <button type="button" id="btn_filter_kKleidung" class="btn btn-default">Kleidung</button>
+                                <button type="button" id="btn_filter_kTier" class="btn btn-default">Tier</button>
+                            </div>
+                            <br/><br/>
+                            <button type="button" class="btn" id="btn_filter_anwenden" style="width: 201px; color: white; background-color: #ff00cc">Anwenden</button>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="row" id="product_container">
+
+
+
+                        <div class="col-md-3" style="margin-bottom: 16px">
+                            <div class="card" style="height: 100%">
+
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Baumkuchen.jpg" alt="" style="max-height: 200px; max-width: 100%; min-width: 50%; position: absolute; z-index: 10">
+
+                                <div style="z-index: 100; background-color: #ffbbee; width: 100px; border-bottom-right-radius: 16px; box-shadow: 2px 2px 2px rgba(10,10,10,0.2)"><span style="font-size: 16pt; margin: 5px">10,00</span> 
+                                </div>    
+                                <div class="card-body" style="position: relative; margin-top: calc(200px - 10px - 16pt - 10px)">
+                                    <h3 class="card-title">Baumkuchen</h3>
+                                    <p class="card-text" style="color: rgb(0, 200, 0)">Auf Lager</p>
+                                    <p class="card-text">kann spuren von Nüssen enthalten</p>
+                                    <button class="btn" style="background-color: transparent"></button><br/><br/>
+                                    <a href="#" class="btn btn-default" style="color: white; background-color: #ff00cc; bottom: 10px; position: absolute" role="button">In den Warenkorb</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Ende der Internetseite -->
+
+        <script>
+
+            var productContainer = document.getElementById("product_container");
+
+            // FILTER
+            var btnFilterAufLager = document.getElementById("btn_filter_aufLager");
+            var btnFilterNichtVerfugbar = document.getElementById("btn_filter_nichtVerfugbar");
+            var txtFilterVon = document.getElementById("txt_filter_von");
+            var txtFilterBis = document.getElementById("txt_filter_bis");
+            var btnFilterK_Pflanzen = document.getElementById("btn_filter_kPflanzen");
+            var btnFilterK_Geback = document.getElementById("btn_filter_kGeback");
+            var btnFilterK_Buch = document.getElementById("btn_filter_kBuch");
+            var btnFilterK_Gewurz = document.getElementById("btn_filter_kGewurz");
+            var btnFilterK_Garten = document.getElementById("btn_filter_kGarten");
+            var btnFilterK_Kuche = document.getElementById("btn_filter_kKuche");
+            var btnFilterK_Kleidung = document.getElementById("btn_filter_kKleidung");
+            var btnFilterK_Tier = document.getElementById("btn_filter_kTier");
+            var btnFilterAnwenden = document.getElementById("btn_filter_anwenden");
+            
+            btnFilterAufLager.onclick = function () {
+                btnFilterAufLager.selected = !btnFilterAufLager.selected;
+                if (btnFilterAufLager.selected) {
+                    btnFilterAufLager.className += " active";
+                } else {
+                    btnFilterAufLager.className = btnFilterAufLager.className.replace(" active", "");
+                }
+            };
+
+            btnFilterNichtVerfugbar.onclick = function () {
+                btnFilterNichtVerfugbar.selected = !btnFilterNichtVerfugbar.selected;
+                if (btnFilterNichtVerfugbar.selected) {
+                    btnFilterNichtVerfugbar.className += " active";
+                } else {
+                    btnFilterNichtVerfugbar.className = btnFilterNichtVerfugbar.className.replace(" active", "");
+                }
+            };
+
+
+            btnFilterK_Pflanzen.onclick = function () {
+                btnFilterK_Pflanzen.selected = !btnFilterK_Pflanzen.selected;
+                if (btnFilterK_Pflanzen.selected) {
+                    btnFilterK_Pflanzen.className += " active";
+                } else {
+                    btnFilterK_Pflanzen.className = btnFilterK_Pflanzen.className.replace(" active", "");
+                }
+            };
+            btnFilterK_Geback.onclick = function () {
+                btnFilterK_Geback.selected = !btnFilterK_Geback.selected;
+                if (btnFilterK_Geback.selected) {
+                    btnFilterK_Geback.className += " active";
+                } else {
+                    btnFilterK_Geback.className = btnFilterK_Geback.className.replace(" active", "");
+                }
+            };
+            btnFilterK_Buch.onclick = function () {
+                btnFilterK_Buch.selected = !btnFilterK_Buch.selected;
+                if (btnFilterK_Buch.selected) {
+                    btnFilterK_Buch.className += " active";
+                } else {
+                    btnFilterK_Buch.className = btnFilterK_Buch.className.replace(" active", "");
+                }
+            };
+            btnFilterK_Gewurz.onclick = function () {
+                btnFilterK_Gewurz.selected = !btnFilterK_Gewurz.selected;
+                if (btnFilterK_Gewurz.selected) {
+                    btnFilterK_Gewurz.className += " active";
+                } else {
+                    btnFilterK_Gewurz.className = btnFilterK_Gewurz.className.replace(" active", "");
+                }
+            };
+            btnFilterK_Garten.onclick = function () {
+                btnFilterK_Garten.selected = !btnFilterK_Garten.selected;
+                if (btnFilterK_Garten.selected) {
+                    btnFilterK_Garten.className += " active";
+                } else {
+                    btnFilterK_Garten.className = btnFilterK_Garten.className.replace(" active", "");
+                }
+            };
+            btnFilterK_Kuche.onclick = function () {
+                btnFilterK_Kuche.selected = !btnFilterK_Kuche.selected;
+                if (btnFilterK_Kuche.selected) {
+                    btnFilterK_Kuche.className += " active";
+                } else {
+                    btnFilterK_Kuche.className = btnFilterK_Kuche.className.replace(" active", "");
+                }
+            };
+            btnFilterK_Kleidung.onclick = function () {
+                btnFilterK_Kleidung.selected = !btnFilterK_Kleidung.selected;
+                if (btnFilterK_Kleidung.selected) {
+                    btnFilterK_Kleidung.className += " active";
+                } else {
+                    btnFilterK_Kleidung.className = btnFilterK_Kleidung.className.replace(" active", "");
+                }
+            };
+            btnFilterK_Tier.onclick = function () {
+                btnFilterK_Tier.selected = !btnFilterK_Tier.selected;
+                if (btnFilterK_Tier.selected) {
+                    btnFilterK_Tier.className += " active";
+                } else {
+                    btnFilterK_Tier.className = btnFilterK_Tier.className.replace(" active", "");
+                }
+            };
+
+            btnFilterAnwenden.onclick = function () {
+                productContainer.innerHTML = "";
+            };
+
+        </script>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

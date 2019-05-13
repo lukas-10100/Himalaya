@@ -1,0 +1,90 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01.04.2019, 18:22:24
+    Author     : lukas
+*/
+
+
+.shadow{
+    box-shadow: 3px 3px 6px rgba(40, 40, 60, 0.3);
+}
+.shadow-sm{
+    box-shadow: 2px 2px 3px rgba(40, 40, 60, 0.2);
+}
+.shadow-lg{
+    box-shadow: 5px 5px 9px rgba(40, 40, 60, 0.4);
+}
+
+.text-shadow{
+    text-shadow: 3px 3px 6px rgba(40, 40, 60, 0.4);
+}
+.text-shadow-sm{
+    text-shadow: 2px 2px 3px rgba(40, 40, 60, 0.3);
+}
+.text-shadow-lg{
+    text-shadow: 5px 5px 9px rgba(40, 40, 60, 0.5);
+}
+
+.w-25{
+    width: 25%;
+}
+.w-50{
+    width: 50%;
+}
+.w-75{
+    width: 75%;
+}
+.w-100{
+    width: 100%;
+}
+
+.rounded{
+    border-radius: 4px;
+}
+.rounded-0{
+    border-radius: 0px;
+}
+
+.bg-transparent{
+    background-color: rgba(0,0,0,0);
+}
+
+.bg-dark{
+    background-color: #576574
+}
+
+.bg-darker{
+    background-color: #354352
+}
+
+.bg-light{
+    background-color: #ddd
+}
+
+.bg-bright{
+    background-color: #fff
+}
+
+.bg-pink{
+    background-color: #ff00cc
+}
+
+.text-dark{
+    color: #576574
+}
+
+.text-light{
+    color: #ddd
+}
+
+.text-bright{
+    color: #fff
+}
+.text-darker{
+    color: #354352
+}
+

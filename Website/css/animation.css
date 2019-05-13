@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28.03.2019, 19:06:34
+    Author     : lukas
+*/
+
+.anim-fade-in{
+    animation: opac ease-in-out 1.3s
+}
+@keyframes opac{from{opacity:0} to{opacity:1}}
+
+.anim-bright-in{
+    animation: brgh ease-in-out 1.3s
+}
+@keyframes brgh{from{filter:brightness(0.2);} to{filter:brightness(1);}}

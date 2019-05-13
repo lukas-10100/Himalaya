@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26.03.2019, 17:05:36
+    Author     : lukas
+*/
+@font-face {
+    font-family: amethyst;
+    src: url(../fonts/amethyst.ttf);
+}
+
+@font-face {
+    font-family: geosans;
+    src: url(../fonts/geosans.ttf);
+}
+
+@font-face {
+    font-family: kiona;
+    src: url(../fonts/kiona.ttf);
+}
+
+@font-face {
+    font-family: vistol;
+    src: url(../fonts/vistol.otf);
+}
+
+@font-face {
+    font-family: wind;
+    src: url(../fonts/wind.ttf);
+}
+
+.f-amethyst{
+    font-family: "amethyst";
+}
+.f-geosans{
+    font-family: "geosans";
+}
+.f-kiona{
+    font-family: "kiona";
+}
+.f-vistol{
+    font-family: "vistol";
+}
+.f-wind{
+    font-family: "wind";
+}
+
+.f-bold{
+    font-weight: bold;
+}
+.f-italic{
+    font-style: italic;
+}
